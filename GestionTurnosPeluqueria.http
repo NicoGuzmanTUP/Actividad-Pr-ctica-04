@@ -1,0 +1,6 @@
+@GestionTurnosPeluqueria_HostAddress = http://localhost:5263
+
+GET {{GestionTurnosPeluqueria_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
