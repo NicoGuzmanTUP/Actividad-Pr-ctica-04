@@ -9,8 +9,8 @@ namespace GestionTurnosPeluqueria.Data.Servicios
         Task Update(Turno turno);
         Task Saved(Turno turno);
         Task Delete(int id);
-
         Task<List<Turno>> GetTurnosCancelados(int dias);
         Task<bool> ValidarTurno(string cliente, DateTime fecha);
+        Task<bool> ExistsTurno(DateTime fecha, string hora);
     }
 }

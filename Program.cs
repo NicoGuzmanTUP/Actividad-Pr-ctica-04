@@ -1,4 +1,5 @@
 using GestionTurnosPeluqueria.Data.Repositories;
+using GestionTurnosPeluqueria.Data.Servicios;
 using GestionTurnosPeluqueria.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var cnnString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ServicioDbContext>(options => options.UseSqlServer(cnnString));
+builder.Services.AddScoped<ITurnoService, TurnoService>();
 builder.Services.AddScoped<ITurnoRepository, TurnoRepository>();
 builder.Services.AddScoped<IDetalleTurnoRepository, DetalleTurnoRepository>();
 builder.Services.AddScoped<IServicioRepository, ServicioRepository>(); // Se inyecta el repositorio

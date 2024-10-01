@@ -9,7 +9,8 @@ namespace GestionTurnosPeluqueria.Data.Repositories
         Task Update(Turno turno);
         Task Saved(Turno turno);
         Task Delete(int id);
-
+        bool ValidateDate(DateTime fecha);
+        Task<bool> ExistsTurno(DateTime fecha, string hora);
         Task<Turno> GetByClienteDate(string cliente, DateTime fecha);
     }
 }

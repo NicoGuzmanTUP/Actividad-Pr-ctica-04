@@ -37,7 +37,7 @@ namespace GestionTurnosPeluqueria.Data.Repositories
 
         public async Task Update(Servicio servicio)
         {
-            throw new NotImplementedException();
+            
         }        
 
         public async Task Delete(int id)

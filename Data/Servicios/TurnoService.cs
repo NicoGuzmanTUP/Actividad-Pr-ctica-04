@@ -15,7 +15,12 @@ namespace GestionTurnosPeluqueria.Data.Servicios
 
         public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            await _turnoRepository.Delete(id);
+        }
+
+        public async Task<bool> ExistsTurno(DateTime fecha, string hora)
+        {
+            return await _turnoRepository.ExistsTurno(fecha, hora);
         }
 
         public async Task<List<Turno>> GetAll()
@@ -25,7 +30,7 @@ namespace GestionTurnosPeluqueria.Data.Servicios
 
         public async Task<Turno> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _turnoRepository.GetById(id);
         }
 
         public async Task<List<Turno>> GetTurnosCancelados(int dias)
@@ -40,7 +45,7 @@ namespace GestionTurnosPeluqueria.Data.Servicios
 
         public async Task Update(Turno turno)
         {
-            throw new NotImplementedException();
+             await _turnoRepository.Update(turno);
         }
 
         public async Task<bool> ValidarTurno(string cliente, DateTime fecha)
